@@ -47,7 +47,7 @@ public class Cos {
 	}
 
 	public void afisareBilete() {
-		for (int i = 0; i < nrBilete; i++)
+		for (int i = 0; i < this.nrBilete; i++)
 			bilete[i].afisare();
 	}
 

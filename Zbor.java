@@ -110,9 +110,18 @@ public class Zbor {
 	public void anulare(String motiv) {
 		//TODO edit motiv
 		for(int i=0;i<this.bilet.length;i++) {
+			this.notificaBiletSters(this.bilet[i]);
 			this.bilet[i].stergere();
 			this.bilet[i] = null;
 		}
+	}
+
+	private void notificaBiletSters(Bilet bilet2) {
+		// TODO Auto-generated method stub
+		System.out.println("Anulare bilet .... ");
+		bilet2.afisare();
+		System.out.println("Trimitere request worker-proces-anulare-bilet ....");
+		System.out.println("Done.");
 	}
 
 	/**
