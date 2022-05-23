@@ -33,21 +33,23 @@ public class Client {
 	/**
 	 * 
 	 */
-	public Bilet[] bilet; // e redundant ca avem vector de bilete si la client si la cos
+	public Bilet[] bileteCumparate; // e redundant ca avem vector de bilete si la client si la cos
 	/**                   // la fel si cu aduga/sterge bilet
 	 * 
 	 */
+	public int nrBilete;
 	public Cos cos;
 	
-	public Client(String id, String nume, String prenume, String cnp, String email, Cos cos) {
+	public Client(String id, String nume, String prenume, String cnp, String email) {
 		super();
 		this.nume = nume;
 		this.prenume = prenume;
 		this.id = id;
 		this.cnp = cnp;
 		this.email = email;
-		this.cos = cos; // compozitie!!!!!!!
-		
+		this.cos = new Cos(); 
+		this.bileteCumparate = new Bilet[30];
+		this.nrBilete = 0;
 	}
 
 //	public void anuleazaBilet(String id_bilet) {
@@ -74,15 +76,20 @@ public class Client {
 	 * 
 	 * @param id_bilet 
 	 */
-//	public void adaugaBilet(String id_bilet) {
+//	public void adaugaBilet(Bilet bilet) {
+//		this.bileteCumparate[this.nrBilete++] = bilet;
 //	}
+	
+	public void checkout() {
+		this.bileteCumparate = this.cos.checkout(this.bileteCumparate);
+	}
 
 	/**
 	 * 
 	 */
 	public void afisareBilete() {
-		for(int i=0;i<this.bilet.length;i++) {
-			bilet[i].afisare();
+		for(int i=0;i<this.bileteCumparate.length;i++) {
+			bileteCumparate[i].afisare();
 		}
 	}
 }
