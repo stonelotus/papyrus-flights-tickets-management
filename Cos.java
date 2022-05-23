@@ -76,9 +76,13 @@ public class Cos {
 	}
 
 	/**
+	 * @return 
 	 * 
 	 */
-	public void checkout() {
-		//aici ar trebui ca zbor.loc
+	public Bilet[] checkout(Bilet[] bileteClient) {
+		for(int i = bileteClient.length; i < (bileteClient.length + this.nrBilete); i++) {
+			bileteClient[i] = this.bilete[i - bileteClient.length];
+		}
+		return bileteClient;
 	}
 }
