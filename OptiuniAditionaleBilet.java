@@ -25,7 +25,7 @@ public class OptiuniAditionaleBilet {
 	/**
 	 * 
 	 */
-	public float greutateAditionala;
+	public double greutateAditionala;
 	/**
 	 * 
 	 */
@@ -34,20 +34,22 @@ public class OptiuniAditionaleBilet {
 	public OptiuniAditionaleBilet() {
 		this.pretTotalOptiuni = 0;
 	}
-	public OptiuniAditionaleBilet(int clasa, int nrBagaje, int marimiBagaje, float greutateAditionala,
-			float pretTotalOptiuni) {
+	public OptiuniAditionaleBilet(int clasa, int nrBagaje, int marimiBagaje, double d) {
 		super();
 		this.clasa = clasa;
 		this.nrBagaje = nrBagaje;
 		this.marimiBagaje = marimiBagaje;
-		this.greutateAditionala = greutateAditionala;
+		this.greutateAditionala = d;
 		this.pretTotalOptiuni = 0;
 		this.computeCost();
 	}
 	public void setClasa(int clasa2) {
 		this.clasa = clasa2;
-		
 	}
+	public int getClasa() {
+		return this.clasa;
+	}
+	
 	public void setNrBagaje(int nrBagaje2) {
 		// TODO Auto-generated method stub
 		this.nrBagaje = nrBagaje2;
@@ -75,5 +77,11 @@ public class OptiuniAditionaleBilet {
 	public float getPretTotalOptiuni() {
 		return this.pretTotalOptiuni;
 	}
+	public int getNrBagaje() {
+		return this.nrBagaje;
+	}
 
+	public double getGreutateAditionala() {
+		return this.greutateAditionala;
+	}
 }

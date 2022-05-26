@@ -14,7 +14,7 @@ public class Bilet {
 	/**
 	 * 
 	 */
-	protected final int id;
+	protected int id;
 	/**
 	 * 
 	 */
@@ -30,7 +30,7 @@ public class Bilet {
 	/**
 	 * 
 	 */
-	protected final String dataGenerare;
+	protected String dataGenerare;
 	/**
 	 * 
 	 */
@@ -55,6 +55,17 @@ public class Bilet {
 		//optiunile aditionale lipsesc de aici pt ca sunt optionale
 	}
 	
+	public void completareDetaliiBilet(int id, int pret, int loc, int poarta, String dataGenerare, String deadlineCheckin, boolean adaugaOptiuniAditionale) {
+		this.id = id;	
+		this.pret = pret;
+		this.loc = loc;
+		this.poarta = poarta;
+		this.dataGenerare = dataGenerare;
+		this.deadlineCheckin = deadlineCheckin;
+		if(adaugaOptiuniAditionale == true) {
+			selecteazaOptiuniAditionale();
+		}
+	}
 	
 
 	/**
